@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Marcellus SC", serif;
+    font-weight: 200;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li{
+    list-style: none;
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./../IMGs/20221114-ovicio-elden-ring-capa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    margin-top: 50px;
+}
+
+main{
+    height: 65vh;
+    display: flex;
+    justify-content:space-between;
+}
+
+main #esquerda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+main #esquerda button{
+    height: 120px;
+    width: 370px;
+    background-color: #EFC96A;
+    font-size: 32px;
+}
+
+main #direita{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+main #direita button{
+    height: 120px;
+    width: 370px;
+    background-color: #EFC96A;
+    font-size: 32px;
+}
+
+
+footer{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer h3{
+    font-size: 16px;
+    color: white;
+}
