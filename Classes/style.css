@@ -78,6 +78,23 @@ main{
     cursor: pointer; 
 }
 
+#divImagem{
+    height: 800px;
+    width: 20vw;
+    background-color: #D5E4CF;
+}
+
+#divImagem img{
+    height: 800px;
+    width: 15vw;
+}
+
+#divInfo{
+    height: 800px;
+    width: 70vw;
+    background-color: #D5E4CF;
+}
+
 footer{
     height: 10vh;
     display: flex;
