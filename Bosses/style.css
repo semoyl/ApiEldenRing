@@ -1,4 +1,4 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,16 +6,16 @@
     font-weight: 200;
 }
 
-a {
+a{
     text-decoration: none;
     color: inherit;
 }
 
-ul, ol, li {
+ul, ol, li{
     list-style: none;
 }
 
-body {
+body{
     height: 100vh;
     width: 100vw;
     background-image: url(./../IMGs/20221114-ovicio-elden-ring-capa.jpg);
@@ -25,7 +25,7 @@ body {
     background-attachment: fixed;
 }
 
-header {
+header{
     height: 25vh;
     display: flex;
     align-items: center;
@@ -33,27 +33,26 @@ header {
     flex-direction: column;
 }
 
-header h1 {
+header h1{
     color: white;
     font-size: 32px;
 }
 
-main {
+main{
     display: flex;
     justify-content: center;
 }
 
-#containerCards {
+#containerCards{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-    gap: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr); /* Isso cria 3 colunas iguais */
+    gap: 20px; /* Espaço entre os cards */
+    justify-items: center; /* Alinha os cards horizontalmente */
     padding: 20px;
-    width: 100%;
-    height: calc(100vh - 80px); /* Ocupa o resto da tela */
 }
 
-#containerCards .card {
+
+#containerCards .card{
     height: 530px;
     width: 370px;
     display: flex;
@@ -62,47 +61,48 @@ main {
     align-items: center;
     justify-content: center;
 }
-
-#containerCards .card img {
+#containerCards .card img{
     height: 450px;
     width: 300px;
 }
 
-#containerCards .card button {
+#containerCards .card button{
     width: 300px;
     height: 100px;
     margin-bottom: 10px;
     background-color: #EFC96A;
     font-size: 48px;
-    border: none;
-    cursor: pointer;
+    stroke-width: 0;
+    outline: none;
+    border: none; 
+    cursor: pointer; 
 }
 
-#divImagem {
+#divImagem{
     height: 800px;
     width: 20vw;
     background-color: #D5E4CF;
 }
 
-#divImagem img {
+#divImagem img{
     height: 800px;
     width: 15vw;
 }
 
-#divInfo {
+#divInfo{
     height: 800px;
     width: 70vw;
     background-color: #D5E4CF;
 }
 
-footer {
+footer{
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-footer h3 {
+footer h3{
     font-size: 16px;
     color: white;
 }
@@ -152,7 +152,7 @@ footer h3 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 80px; /* Ajuste como quiser */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,10 +164,43 @@ footer h3 {
     object-fit: contain;
 }
 
+#containerCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+#containerCards .card {
+    height: 530px;
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    background-color: #D5E4CF;
+    align-items: center;
+    justify-content: center;
+}
+
+#containerCards .card img {
+    height: 250px; /* Ajuste no tamanho da imagem */
+    width: 300px;
+    object-fit: cover;
+}
+
+#containerCards .card button {
+    width: 100%;
+    height: 60px;
+    background-color: #EFC96A;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
 #telaEspecifica {
     display: flex;
     gap: 50px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     height: 100%;
     width: 100%;
@@ -176,7 +209,7 @@ footer h3 {
 }
 
 #telaEspecifica img {
-    height: 100%;
+    height: 600px;
     max-height: 100%;
     object-fit: contain;
     border: 2px solid white;
@@ -185,17 +218,13 @@ footer h3 {
 #infosClasse {
     background-color: rgba(240, 248, 232, 0.9);
     padding: 20px;
+    width: 500px;
+    height: 600px;
+    margin-top: 150px;
     border-radius: 15px;
     max-width: 400px;
     font-size: 1.1rem;
     height: auto;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    #containerCards {
-        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
-    }
 }
 
 

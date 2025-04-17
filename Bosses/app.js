@@ -1,14 +1,14 @@
 'use strict';
 
-async function pesquisarClasses() {
-    const url = 'https://eldenring.fanapis.com/api/classes?limit=10';
+async function pesquisarChefe() {
+    const url = 'https://eldenring.fanapis.com/api/bosses';
     const response = await fetch(url);
     const data = await response.json();
     return data.data;
 }
 
 async function telaEspecifica(nome) {
-    const url = `https://eldenring.fanapis.com/api/classes?name=${encodeURIComponent(nome)}`;
+    const url = `https://eldenring.fanapis.com/api/bosses?name=${encodeURIComponent(nome)}`;
     const response = await fetch(url);
     const data = await response.json();
 
@@ -31,27 +31,25 @@ async function telaEspecifica(nome) {
     infos.id = 'infosClasse';
 
     const titulo = document.createElement('h2');
-    titulo.textContent = `Informações:`;
+    titulo.textContent = `Informações sobre: ${classe.name}`;
 
     const descricao = document.createElement('p');
-    descricao.textContent = `Description: ${classe.description}`;
+    descricao.textContent = `Descrição: ${classe.description}`;
 
-    const stats = document.createElement('div');
-    stats.innerHTML = `
-        <p><strong>Level:</strong> ${classe.stats.level}</p>
-        <p><strong>Vigor:</strong> ${classe.stats.vigor}</p>
-        <p><strong>Mind:</strong> ${classe.stats.mind}</p>
-        <p><strong>Endurance:</strong> ${classe.stats.endurance}</p>
-        <p><strong>Strength:</strong> ${classe.stats.strength}</p>
-        <p><strong>Dexterity:</strong> ${classe.stats.dexterity}</p>
-        <p><strong>Intelligence:</strong> ${classe.stats.intelligence}</p>
-        <p><strong>Faith:</strong> ${classe.stats.faith}</p>
-        <p><strong>Arcane:</strong> ${classe.stats.arcane}</p>
-    `;
+    const localizacao = document.createElement('p');
+    localizacao.textContent = `Localização: ${classe.location}`;
+
+    const drops = document.createElement('p');
+    drops.textContent = `Itens que caem: ${classe.drops.join(', ')}`;
+
+    const vida = document.createElement('p');
+    vida.textContent = `Pontos de Vida: ${classe.healthPoints}`;
 
     infos.appendChild(titulo);
     infos.appendChild(descricao);
-    infos.appendChild(stats);
+    infos.appendChild(localizacao);
+    infos.appendChild(drops);
+    infos.appendChild(vida);
 
     tela.appendChild(img);
     tela.appendChild(infos);
@@ -78,8 +76,8 @@ function criarImgLink(dados) {
     container.appendChild(card);
 }
 
-async function preencherClasses() {
-    const classes = await pesquisarClasses();
+async function preencherChefe() {
+    const classes = await pesquisarChefe();
     const container = document.getElementById('containerCards');
 
     container.innerHTML = ''; // Limpa para garantir
@@ -87,4 +85,4 @@ async function preencherClasses() {
     classes.forEach(criarImgLink);
 }
 
-preencherClasses();
+preencherChefe();
